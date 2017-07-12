@@ -1,13 +1,13 @@
 RSpec.feature "User creates a new playlist" do
   scenario "they see song titles and the titles are links to the song pages" do
     song_one, song_two, song_three = create_list(:song, 3)
-    playlist = "My Jams"
+    playlist_name = "My Jams"
 
     visit playlists_path
     click_on "New Playlist"
-    fill_in "playlist_name", with: playlist
-    check("#{song_one.title}")
-    check("#{song_three.title}")
+    fill_in "playlist_name", with: playlist_name
+    check("song-#{song_one.id}")
+    check("song-#{song_three.id}")
     click_on "Create Playlist"
 
     expect(page).to have_content playlist_name
