@@ -1,5 +1,3 @@
-require "rails_helper"
-
 RSpec.feature "User visits artist index" do
   before :each do
     @beyonce_image = "http://mp3teca.com/-/2014/11/Beyonce.jpg"

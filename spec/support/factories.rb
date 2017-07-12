@@ -16,4 +16,10 @@ FactoryGirl.define do
     title
     artist
   end
+
+  factory :playlist do
+    sequence :name do |n|
+      "#{n} Playlist"
+    end
+  end
 end
