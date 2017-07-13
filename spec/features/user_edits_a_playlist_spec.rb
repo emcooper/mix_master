@@ -12,7 +12,6 @@ RSpec.feature "User edits a playlist name and songs" do
     check("song-#{song3.id}")
     uncheck("song-#{song1.id}")
     click_on "Update Playlist"
-    save_and_open_page
 
     expect(page).to have_content "Morning Jamz"
     expect(page).to have_content song2.title
